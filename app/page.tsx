@@ -1,17 +1,16 @@
+import { connectDB } from "@/util/database"
 import { MongoClient } from "mongodb"
 
 
-export default function Home() {
+export default async function Home() {
 
-  // MongoClient.connect()
+  const client = await connectDB;
+  const db = client.db("forum")
+  let result :string[] = await db.collection('post').find().toArray()
+  console.log(result)
 
   return (
     <div>
-      <h4>하이</h4>
-      <h4>하이</h4>
-      <h4>하이</h4>
-      <h4>하이</h4>
-      <h4>하이</h4>
       <h4>하이</h4>
     </div>
   )
