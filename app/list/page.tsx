@@ -12,7 +12,7 @@ export default async function List() {
       {
         result.map((a, i) => {
           return (
-            <div className="list-item">
+            <div className="list-item" key = {i}>
               <h4>{result[i].title}</h4>
               <p>{result[i].content}</p>
               <p>1월 1일</p>
